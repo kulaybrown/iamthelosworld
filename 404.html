@@ -6,7 +6,8 @@
     <script>
       // Redirect unknown GitHub Pages routes to index.html while preserving path.
       ;(function () {
-        var pathSegmentsToKeep = 1
+        // Custom domain is served from root, so do not keep repo path segments.
+        var pathSegmentsToKeep = 0
         var l = window.location
         l.replace(
           l.protocol +
