@@ -44,9 +44,6 @@ export default function JumpyRunPage() {
           <span className="border border-line bg-surface px-4 py-2 font-mono text-xs tracking-[0.2em] text-mist">
             PIXEL PLATFORMER
           </span>
-          <span className="border border-line bg-surface px-4 py-2 font-mono text-xs tracking-[0.2em] text-mist">
-            COMING SOON
-          </span>
           <span className="border border-cyan/40 bg-cyan/5 px-4 py-2 font-mono text-xs tracking-[0.2em] text-cyan">
             COMING TO ANDROID
           </span>
