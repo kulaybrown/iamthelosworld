@@ -23,7 +23,6 @@ export default function JumpyRunPage() {
           JUMPY RUN
         </h1>
 
-        {/* Game Preview Image - Max width set to 4XL (matching main content container) */}
         <div className="mt-8 w-full max-w-4xl overflow-hidden border border-line bg-surface p-2 shadow-2xl">
           <img 
             src={gameImg} 
