@@ -1,13 +1,14 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import JumpyRunPage from './pages/JumpyRunPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/jumpyrun" element={<JumpyRunPage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }
