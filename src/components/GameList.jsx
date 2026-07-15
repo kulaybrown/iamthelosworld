@@ -11,6 +11,15 @@ const games = [
     tags: ['PLATFORMER', 'ENDLESS', 'ONE-BUTTON'],
     href: '/jumpyrun',
   },
+  {
+    title: 'STREET BUSTER',
+    tagline:
+      'A one-button platformer built around momentum, timing, and trying again. This page is the route target for the game card on the homepage.',
+    status: 'IN DEVELOPMENT',
+    accent: 'magenta',
+    tags: ['FIGHTING', 'ACTION', 'PIXEL ART'],
+    href: '/street-buster',
+  },
 ]
 
 export default function GameList() {
@@ -22,15 +31,24 @@ export default function GameList() {
         One game live in the slot right now. More cartridges loading soon.
       </p>
 
-      <div className="mt-14 flex w-full flex-col items-center gap-8">
+      <div className="mt-14 grid w-full grid-cols-1 md:grid-cols-2 gap-8 justify-items-center justify-stretch max-w-3xl mx-auto">
         {games.map((game) => (
-          <div key={game.title} className="flex w-full max-w-sm flex-col items-stretch gap-3">
-            <GameCard {...game} />
+          <div 
+            key={game.title} 
+            className="flex w-full max-w-sm flex-col justify-between gap-3"
+          >
+            {/* The key change is here: 'flex-1 flex flex-col' forces the wrapper 
+              and the GameCard child inside it to stretch fully. 
+            */}
+            <div className="flex flex-1 flex-col [&>*]:flex-1">
+              <GameCard {...game} />
+            </div>
+            
             <Link
               to={game.href}
-              className="inline-flex items-center justify-center border border-cyan/50 bg-cyan/10 px-4 py-3 font-mono text-xs tracking-[0.25em] text-cyan transition-colors hover:bg-cyan/20"
+              className={`inline-flex items-center justify-center border border-${game.accent}/50 bg-${game.accent}/10 px-4 py-3 font-mono text-xs tracking-[0.25em] text-${game.accent} transition-colors hover:bg-${game.accent}/20`}
             >
-              OPEN JUMPY RUN
+              OPEN {game.title.toUpperCase()}
             </Link>
           </div>
         ))}
