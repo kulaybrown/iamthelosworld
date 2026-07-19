@@ -3,11 +3,15 @@ import Footer from '../components/Footer'
 import useImagePreloader from '../hooks/useImagePreloader'
 
 // Import your assets
-import gameImg from '../assets/images/jumpyrun-img.jpg'
 import bgImg from '../assets/images/jumpyrun-bg.jpg'
 
 export default function JumpyRunPage() {
-  const isReady = useImagePreloader([gameImg, bgImg])
+  const isReady = useImagePreloader([bgImg])
+
+  // Path to the built game files sitting in /public/games/jumpy-run/
+  // import.meta.env.BASE_URL automatically matches your Vite "base" config
+  // (e.g. "/iamthelosworld/") so this resolves correctly on GitHub Pages too.
+  const gamePath = `${import.meta.env.BASE_URL}games/jumpy-run/index.html`
 
   if (!isReady) {
     return (
@@ -36,12 +40,16 @@ export default function JumpyRunPage() {
           JUMPY RUN
         </h1>
 
+        {/* Playable game embed, replacing the old static preview image */}
         <div className="mt-8 w-full max-w-4xl overflow-hidden border border-line bg-surface p-2 shadow-2xl">
-          <img 
-            src={gameImg} 
-            alt="Jumpy Run Gameplay Preview" 
-            className="w-full h-auto object-cover"
-          />
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
+            <iframe
+              src={gamePath}
+              title="Jumpy Run Gameplay"
+              className="absolute inset-0 h-full w-full border-0"
+              allowFullScreen
+            />
+          </div>
         </div>
 
         <p className="mt-8 max-w-2xl font-body text-base text-mist sm:text-lg">
