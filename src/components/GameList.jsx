@@ -9,7 +9,7 @@ const games = [
     status: 'IN DEVELOPMENT',
     accent: 'cyan',
     tags: ['PLATFORMER', 'ENDLESS', 'ONE-BUTTON'],
-    href: '/jumpyrun',
+    href: '/jumpy-run',
   },
   {
     title: 'STREET BUSTER',

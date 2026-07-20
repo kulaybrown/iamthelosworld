@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/jumpyrun" element={<JumpyRunPage />} />
+      <Route path="/jumpy-run" element={<JumpyRunPage />} />
       <Route path="/street-buster" element={<StreetBusterPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react'
+import { supabase } from '../supabaseClient'
 import { Link } from 'react-router-dom'
+import { useMemo } from 'react'
 import Footer from '../components/Footer'
 import useImagePreloader from '../hooks/useImagePreloader'
 
@@ -7,13 +10,37 @@ import bgImg from '../assets/images/jumpyrun-bg.jpg'
 
 export default function JumpyRunPage() {
   const isReady = useImagePreloader([bgImg])
+  const [sessionReady, setSessionReady] = useState(false)
 
-  // Path to the built game files sitting in /public/games/jumpy-run/
-  // import.meta.env.BASE_URL automatically matches your Vite "base" config
-  // (e.g. "/iamthelosworld/") so this resolves correctly on GitHub Pages too.
-  const gamePath = `${import.meta.env.BASE_URL}games/jumpy-run/index.html`
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    const code = url.searchParams.get('code')
 
-  if (!isReady) {
+    const finish = () => {
+      window.history.replaceState({}, document.title, window.location.pathname)
+      setSessionReady(true)
+    }
+
+    if (code) {
+      supabase.auth.exchangeCodeForSession(code).finally(finish)
+    } else {
+      supabase.auth.getSession().finally(finish)
+    }
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, _session) => {
+      // no-op — just needed for cleanup
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  const gamePath = useMemo(
+    () => `${import.meta.env.BASE_URL}games/jumpy-run/index.html`,
+    []
+  )
+
+  // Wait for both the session check AND the image preload before showing the page
+  if (!sessionReady || !isReady) {
     return (
       <div className="flex min-h-screen w-full items-center justify-center bg-ink px-6 text-center">
         <div className="border border-line bg-surface px-6 py-4 font-mono text-xs tracking-[0.3em] text-cyan">
@@ -45,7 +72,7 @@ export default function JumpyRunPage() {
           <div className="relative w-full" style={{ paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
             <iframe
               src={gamePath}
-              title="Jumpy Run Gameplay"
+              title="Jumpy Run"
               className="absolute inset-0 h-full w-full border-0"
               allowFullScreen
             />
