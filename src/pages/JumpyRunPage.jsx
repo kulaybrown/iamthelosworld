@@ -61,14 +61,14 @@ export default function JumpyRunPage() {
       <div className="crt-overlay relative z-10 pointer-events-none" />
 
       {/* Main Content */}
-      <main className="relative z-10 flex min-h-screen w-full max-w-4xl flex-1 flex-col items-center justify-center py-24">
+      <main className="relative z-10 flex min-h-screen w-full max-w-5xl flex-1 flex-col items-center justify-center py-24">
         <span className="font-mono text-xs tracking-[0.35em] text-cyan/80">GAME PAGE</span>
         <h1 className="mt-5 font-pixel text-[clamp(1.6rem,6vw,3.25rem)] leading-relaxed text-white">
           JUMPY RUN
         </h1>
 
         {/* Playable game embed, replacing the old static preview image */}
-        <div className="mt-8 w-full max-w-4xl overflow-hidden border border-line bg-surface p-2 shadow-2xl">
+        <div className="mt-8 w-full max-w-5xl overflow-hidden border border-line bg-surface p-2 shadow-2xl">
           <div className="relative w-full" style={{ paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
             <iframe
               src={gamePath}
