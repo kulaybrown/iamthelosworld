@@ -34,6 +34,17 @@ export default function JumpyRunPage() {
     return () => subscription.unsubscribe()
   }, [])
 
+
+  // 🏷️ Dynamically set the meta title on page load
+  useEffect(() => {
+    document.title = "Jumpy Run! - IAMTHELOSWORLD"
+
+    // Optional: Reset back to standard title when leaving the page
+    return () => {
+      document.title = "IAMTHELOSWORLD"
+    }
+  }, [])
+
   const gamePath = useMemo(
     () => `${import.meta.env.BASE_URL}games/jumpy-run/index.html`,
     []
@@ -62,10 +73,30 @@ export default function JumpyRunPage() {
 
       {/* Main Content */}
       <main className="relative z-10 flex min-h-screen w-full max-w-5xl flex-1 flex-col items-center justify-center py-24">
-        <span className="font-mono text-xs tracking-[0.35em] text-cyan/80">GAME PAGE</span>
-        <h1 className="mt-5 font-pixel text-[clamp(1.6rem,6vw,3.25rem)] leading-relaxed text-white">
-          JUMPY RUN
-        </h1>
+        {/* Navigation Breadcrumb & System Status */}
+        <div className="w-full flex items-center justify-between border-b border-line/60 pb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] text-mist transition-colors hover:text-cyan"
+          >
+            ← BACK TO HUB
+          </Link>
+
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-cyan animate-ping" />
+            <span className="font-mono text-xs tracking-[0.25em] text-cyan">SYSTEM ONLINE</span>
+          </div>
+        </div>
+
+        {/* Title & App Name Banner */}
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <span className="font-mono text-xs tracking-[0.35em] text-cyan/80 uppercase">
+            ARCADE SHOWCASE // NO. 01
+          </span>
+          <h1 className="font-pixel text-[clamp(2rem,6vw,3.5rem)] leading-none text-white tracking-wide">
+            JUMPY RUN
+          </h1>
+        </div>
 
         {/* Playable game embed, replacing the old static preview image */}
         <div className="mt-8 w-full max-w-5xl overflow-hidden border border-line bg-surface p-2 shadow-2xl">
@@ -79,9 +110,9 @@ export default function JumpyRunPage() {
           </div>
         </div>
 
+        {/* ✅ Updated text for Google Verification (Zero layout changes) */}
         <p className="mt-8 max-w-2xl font-body text-base text-mist sm:text-lg">
-          A one-button platformer built around momentum, timing, and trying again. This page is the
-          route target for the game card on the homepage.
+          Jumpy Run is a 2D pixel endless runner. Connect with Google Sign-In to save your high scores, and compete on the global leaderboard.
         </p>
 
         {/* Tag Badges with Android Release status */}

@@ -31,10 +31,29 @@ export default function StreetBusterPage() {
 
       {/* Main Content */}
       <main className="relative z-10 flex min-h-screen w-full max-w-4xl flex-1 flex-col items-center justify-center py-24">
-        <span className="font-mono text-xs tracking-[0.35em] text-cyan/80">GAME PAGE</span>
-        <h1 className="mt-5 font-pixel text-[clamp(1.6rem,6vw,3.25rem)] leading-relaxed text-white">
-          STREET BUSTER
-        </h1>
+        <div className="w-full flex items-center justify-between border-b border-line/60 pb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] text-mist transition-colors hover:text-cyan"
+          >
+            ← BACK TO HUB
+          </Link>
+
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-red-500 animate-ping" />
+            <span className="font-mono text-xs tracking-[0.25em] text-red-500">SYSTEM OFFLINE</span>
+          </div>
+        </div>
+
+        {/* Title & App Name Banner */}
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <span className="font-mono text-xs tracking-[0.35em] text-cyan/80 uppercase">
+            ARCADE SHOWCASE // NO. 02
+          </span>
+          <h1 className="font-pixel text-[clamp(2rem,6vw,3.5rem)] leading-none text-white tracking-wide">
+            STREET BUSTER
+          </h1>
+        </div>
 
         <div className="mt-8 w-full max-w-4xl overflow-hidden border border-line bg-surface p-2 shadow-2xl">
           <img 

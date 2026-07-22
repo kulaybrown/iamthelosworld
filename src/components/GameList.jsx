@@ -14,7 +14,7 @@ const games = [
   {
     title: 'STREET BUSTER',
     tagline:
-      'A one-button platformer built around momentum, timing, and trying again. This page is the route target for the game card on the homepage.',
+      'A one-button platformer built around momentum, timing, and trying again.',
     status: 'IN DEVELOPMENT',
     accent: 'magenta',
     tags: ['FIGHTING', 'ACTION', 'PIXEL ART'],
