@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -8,18 +10,19 @@ export default function Footer() {
       <p className="max-w-sm font-body text-xs text-mist">
         Built pixel by pixel. Thanks for stopping by the arcade.
       </p>
-{/* 
-      <div className="flex gap-6 font-mono text-[11px] tracking-wide text-mist">
-        <a href="#" className="transition-colors hover:text-cyan">
-          ITCH.IO
-        </a>
-        <a href="#" className="transition-colors hover:text-cyan">
-          TWITTER
-        </a>
-        <a href="#" className="transition-colors hover:text-cyan">
-          DISCORD
-        </a>
-      </div> */}
+
+      {/* Legal & Arcade Navigation Links */}
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-[11px] tracking-wide text-mist">
+        <Link to="/privacy" className="transition-colors hover:text-cyan">
+          PRIVACY POLICY
+        </Link>
+        
+        <span className="text-line/60 select-none">•</span>
+
+        <Link to="/terms" className="transition-colors hover:text-cyan">
+          TERMS OF SERVICE
+        </Link>
+      </div>
 
       <span className="mt-2 font-mono text-[10px] text-mist/50">
         © {year} IAMTHELOSWORLD. ALL PIXELS RESERVED.

@@ -3,6 +3,8 @@ import HomePage from './pages/HomePage'
 import JumpyRunPage from './pages/JumpyRunPage'
 import StreetBusterPage from './pages/StreetBusterPage'
 import NotFoundPage from './pages/NotFoundPage'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/jumpy-run" element={<JumpyRunPage />} />
       <Route path="/street-buster" element={<StreetBusterPage />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
