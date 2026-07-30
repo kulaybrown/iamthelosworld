@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account - Jumpy Run - IAMTHELOSWORLD</title>
+    <meta 
+      name="description" 
+      content="Account deletion request page for Jumpy Run and IAMTHELOSWORLD Arcade Games." 
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-200 min-h-screen flex items-center justify-center p-4 font-sans">
+    
+    <div class="w-full max-w-xl bg-slate-900 border border-slate-800 p-6 sm:p-10 rounded-2xl shadow-2xl">
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between border-b border-slate-800 pb-6 mb-8">
+        <div>
+          <span class="inline-block bg-red-500/10 text-red-400 border border-red-500/20 text-xs font-mono font-bold tracking-widest px-3 py-1 rounded-md mb-2 uppercase">
+            Data Rights & Privacy
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-white">
+            Delete Account Data
+          </h1>
+        </div>
+        <a href="/" class="text-xs font-mono text-cyan-400 border border-cyan-500/30 bg-cyan-500/10 px-3 py-2 rounded-lg hover:border-cyan-400">
+          ← Home
+        </a>
+      </div>
+
+      <!-- Compliance Text for Google Bot -->
+      <div class="space-y-4 text-xs text-slate-300 leading-relaxed mb-8">
+        <p>
+          In compliance with Google OAuth Data Protection standards, players of <strong class="text-white">Jumpy Run</strong> and <strong class="text-white">IAMTHELOSWORLD Arcade Games</strong> can permanently delete their user accounts and associated gameplay data.
+        </p>
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-slate-400">
+          <strong class="text-slate-200 block mb-1">What data gets deleted?</strong>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Google OAuth user credentials and email mapping</li>
+            <li>Saved high scores and global leaderboard rankings</li>
+            <li>Custom character preferences</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Deletion Form -->
+      <form action="https://iamthelosworld.com/delete-account" method="GET" class="space-y-5">
+        <div class="flex flex-col gap-2">
+          <label class="text-xs font-mono text-slate-400 uppercase">1. Target Game</label>
+          <select name="game" class="w-full bg-slate-950 border border-slate-800 text-white rounded-xl px-4 py-3 text-sm">
+            <option value="jumpy-run">Jumpy Run (Endless Runner)</option>
+            <option value="all-games">All IAMTHELOSWORLD Arcade Games</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-xs font-mono text-slate-400 uppercase">2. Account Email Address</label>
+          <input 
+            type="email" 
+            name="email" 
+            required 
+            placeholder="your-email@example.com" 
+            className="w-full bg-slate-950 border border-slate-800 text-white rounded-xl px-4 py-3 text-sm"
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-wider transition-all"
+        >
+          Submit Account Deletion Request
+        </button>
+      </form>
+
+    </div>
+
+  </body>
+</html>
