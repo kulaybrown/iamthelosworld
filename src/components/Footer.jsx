@@ -22,6 +22,11 @@ export default function Footer() {
         <Link to="/terms" className="transition-colors hover:text-cyan">
           TERMS OF SERVICE
         </Link>
+
+        <span className="text-line/60 select-none">•</span>
+        <Link to="/delete-account" className="transition-colors hover:text-cyan">
+          DELETE ACCOUNT
+        </Link>
       </div>
 
       <span className="mt-2 font-mono text-[10px] text-mist/50">

@@ -5,6 +5,7 @@ import StreetBusterPage from './pages/StreetBusterPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import DeleteAccount from './pages/DeleteAccount'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/street-buster" element={<StreetBusterPage />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/delete-account" element={<DeleteAccount />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
