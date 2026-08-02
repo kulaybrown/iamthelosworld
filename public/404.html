@@ -33,7 +33,35 @@
     </script>
   </head>
   <body>
-    <h1>Jumpy Run - IAMTHELOSWORLD</h1>
-    <p>Jumpy Run is a 2D pixel endless runner. Connect with Google Sign-In to save your high scores, and compete on the global leaderboard.</p>
+  <main class="w-full max-w-2xl bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl text-center space-y-6">
+    <!-- 2. EXACT APP NAME IN MAIN H1 HEADER -->
+    <h1 class="text-4xl font-extrabold text-white tracking-tight">
+      Jumpy Run
+    </h1>
+
+    <!-- 3. CLEAR EXPLANATION OF APP PURPOSE & GOOGLE OAUTH USE -->
+    <p class="text-sm text-slate-300 leading-relaxed max-w-lg mx-auto">
+      <strong>Jumpy Run</strong> is a 2D pixel endless runner game hosted on <a href="https://iamthelosworld.com" class="text-cyan-400 underline">IAMTHELOSWORLD</a>. Players control a runner dodging obstacles, collecting items, and striving for high scores.
+    </p>
+
+    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-400 text-left space-y-2">
+      <strong class="text-slate-200 block text-sm">Why Jumpy Run uses Google Sign-In:</strong>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Authenticate your player profile securely</li>
+        <li>Save and sync high scores across sessions</li>
+        <li>Display your username on the global Jumpy Run leaderboard</li>
+      </ul>
+    </div>
+
+    <!-- Links required by Google OAuth Reviewers -->
+    <div class="flex items-center justify-center gap-6 text-xs font-mono text-cyan-400 pt-4 border-t border-slate-800">
+      <a href="https://iamthelosworld.com/privacy" class="hover:underline">Privacy Policy</a>
+      <span>•</span>
+      <a href="https://iamthelosworld.com/terms" class="hover:underline">Terms of Service</a>
+      <span>•</span>
+      <a href="https://iamthelosworld.com/delete-account" class="hover:underline">Delete Account Data</a>
+    </div>
+
+  </main>
   </body>
 </html>

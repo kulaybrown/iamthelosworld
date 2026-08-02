@@ -37,7 +37,7 @@ export default function JumpyRunPage() {
 
   // 🏷️ Dynamically set the meta title on page load
   useEffect(() => {
-    document.title = "Jumpy Run! - IAMTHELOSWORLD"
+    document.title = "Jumpy Run - IAMTHELOSWORLD"
 
     // Optional: Reset back to standard title when leaving the page
     return () => {
